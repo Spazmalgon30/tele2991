@@ -6,9 +6,9 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Copy, Users, Wallet, Gift } from 'lucide-react';
 import Lottie from 'lottie-react';
 import wheelAnimation from './animations/wheel.json';
-import tg from '@twa-dev/sdk';
 
 export default function App() {
+  const tg = window.Telegram.WebApp;
   const [balance, setBalance] = useState(320);
   const [referrals, setReferrals] = useState([
     { id: 1, name: "@user1" },
@@ -51,7 +51,6 @@ export default function App() {
           <TabsTrigger value="ref"><Users className="w-4 h-4 inline" /> Рефералы</TabsTrigger>
         </TabsList>
 
-        {/* Главный экран */}
         <TabsContent value="main">
           <Card>
             <CardContent className="flex flex-col items-center p-4 space-y-4">
@@ -85,7 +84,6 @@ export default function App() {
           </Card>
         </TabsContent>
 
-        {/* Кошелёк */}
         <TabsContent value="wallet">
           <Card>
             <CardContent className="p-4 space-y-4">
@@ -110,7 +108,6 @@ export default function App() {
           </Card>
         </TabsContent>
 
-        {/* Рефералы */}
         <TabsContent value="ref">
           <Card>
             <CardContent className="p-4 space-y-4">
