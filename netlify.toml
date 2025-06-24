@@ -1,0 +1,7 @@
+[build]
+command = "pnpm install && pnpm run build"
+publish = "dist"
+
+[build.environment]
+ROLLUP_USE_NODE_BUILD = "true"
+NODE_VERSION = "20"
